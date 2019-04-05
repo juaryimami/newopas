@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/add_file"
+        android:title="Attachments"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/main_settings_btn"
+        android:title="Account Settings" />
+    <item
+        android:visible="false"
+        android:id="@+id/add_member"
+        android:title="ADD NEW BERS" />
+
+    <item
+        android:id="@+id/main_all_btn"
+        android:title="All Users" />
+        <item
+        android:id="@+id/add_schedule"
+        android:title="Schedule"
+        app:showAsAction="never"/>
+<item
+    android:id="@+id/llogout"
+    android:title="logout"
+    app:showAsAction="never"/>
+
+</menu>

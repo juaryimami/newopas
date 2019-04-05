@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jewharyimer.newopas">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".StartActivity" />
+        <activity android:name=".StartActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:parentActivityName=".StartActivity" />
+        <activity
+            android:name=".UsersActivity"
+            android:parentActivityName=".MainActivity" />
+
+        <service
+            android:name=".Notification.MyFirebaseIdService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".attach_files"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Schedule.Schedule_Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <provider
+            android:name=".data.TaskProvider"
+            android:authorities="com.example.jewharyimer.newopas"
+            android:exported="false" />
+
+        <activity
+            android:name=".Schedule.add_schedule_Activity"
+            android:exported="false"
+            android:parentActivityName=".Schedule.Schedule_Activity" />
+        <activity
+            android:name=".Schedule.TaskDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".Schedule.Schedule_Activity" />
+        <activity
+            android:name=".Schedule.SettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".Schedule.Schedule_Activity" />
+
+        <service
+            android:name=".data.TaskUpdateService"
+            android:exported="false" />
+        <service
+            android:name=".reminders.ReminderAlarmService"
+            android:exported="false" />
+        <service
+            android:name=".data.CleanupJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name=".FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".StatusActivity"
+            android:parentActivityName=".SettingsActivity" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".ProfileActivity">
+            <intent-filter>
+                <action android:name="com.example.jewharyimer.newopas_TARGET_NOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SettingsActivity" />
+        <activity
+            android:name=".ChatActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ViewUploadsActivity"
+            android:parentActivityName=".attach_files" />
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:parentActivityName=".LoginActivity" />
+        <activity android:name=".Change_Password" />
+        <activity
+            android:name=".Add_member"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Addcomment" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".Main22Activity" />
+        <activity android:name=".Main3Activity"></activity>
+    </application>
+
+</manifest>
